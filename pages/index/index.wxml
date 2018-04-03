@@ -1,9 +1,61 @@
 <!--index.wxml-->
-<view class="container fdr head">
-  <view class="head-item">管理</view>
-  <view class="head-item">帮会</view>
-  <view class="head-item">小店</view>
-  <view class="head-item">红包</view>
+<view class="container top">
 
+  <view class="head">
+    <view class="head-item ">
+      <image class="icon-manage" src="../../images/home_ico_1.png" background-size="cover"></image>
+      <view>管理</view>
+    </view>
+    <view class="head-item icon-gang">
+      <image class="icon-manage" src="../../images/home_ico_2.png" background-size="cover"></image>
+      <view>帮会</view>
+    </view>
+    <view class="head-item icon-shop">
+      <image class="icon-manage" src="../../images/home_ico_3.png" background-size="cover"></image>
+      <view>小店</view>
+    </view>
+    <view class="head-item icon-redpacket">
+      <image class="icon-manage" src="../../images/home_ico_4.png" background-size="cover"></image>
+      <view>红包</view>
+    </view>
+  </view>
 
+  <navigator url="pages/{{page}}/{{page}}" class="navigator notice">
+                  <view class="navigator-text">公告：凯特芒因受天气影响延迟3天收到请回答</view>
+                  <view class="navigator-arrow"></view>
+                </navigator> 
+  
 </view>
+  
+    <div class="weui-cells page__category-content">
+                        <a class="weui-cell weui-cell_access js_item" data-id="button" href="javascript:;">
+                            <div class="weui-cell__bd">
+                                <p>Button</p>
+                            </div>
+                            <div class="weui-cell__ft_in-access"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access js_item" data-id="input" href="javascript:;">
+                            <div class="weui-cell__bd">
+                                <p>Input</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access js_item" data-id="list" href="javascript:;">
+                            <div class="weui-cell__bd">
+                                <p>List</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access js_item" data-id="slider" href="javascript:;">
+                            <div class="weui-cell__bd">
+                                <p>Slider</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access js_item" data-id="uploader" href="javascript:;">
+                            <div class="weui-cell__bd">
+                                <p>Uploader</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                    </div>
