@@ -1,4 +1,5 @@
 <template name="top-menu">
+<!--todo 数据绑定 动画效果 点击事件  -->
   <view class='top-menu'>
     <view class="menu-item link active">类别<view class="triangle"></view></view>
     <view class="menu-item link">品牌<view class="triangle"></view></view>

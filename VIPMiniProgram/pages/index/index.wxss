@@ -1,5 +1,5 @@
 /**index.wxss**/
-@import "../component/top-menu/top-menu.wxss";
+@import "/common/template/top-menu/top-menu.wxss";
 .top {
   background: #fff;
   padding-top: 20rpx;

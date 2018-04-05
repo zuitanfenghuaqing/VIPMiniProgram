@@ -1,7 +1,5 @@
 <!--index.wxml-->
-
-<import src="../component/top-menu/top-menu.wxml" />
-
+<import src="/common/template/top-menu/top-menu.wxml" />
 
 <view class="container top">
   <view class="head">
@@ -31,5 +29,5 @@
 </view>
 
 <view class="container">
-  <template is="top-menu" />
+  <template is="top-menu" data="{{...item}}"/>
 </view>
