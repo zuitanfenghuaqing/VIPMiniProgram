@@ -2,10 +2,9 @@
 
 >2018-4-5
 
-后台的环境搭建
--------
-试了各种框架和后台ui 最后定下来用thinkphp(mongo)+vue_element_admin<br>
-
+#####后台的环境搭建
+试了各种框架和后台ui 最后定下来用`thinkphp(mongo)`+`vue_element_admin`<br>
+尝试各种readme的样式排版……<br>
 >2018-4-4
 
 开始动工
