@@ -1,6 +1,9 @@
 <!--index.wxml-->
-<view class="container top">
 
+<import src="../component/top-menu/top-menu.wxml" />
+
+
+<view class="container top">
   <view class="head">
     <view class="head-item ">
       <image class="icon-manage" src="../../images/home_ico_1.png" background-size="cover"></image>
@@ -21,41 +24,12 @@
   </view>
 
   <navigator url="pages/{{page}}/{{page}}" class="navigator notice">
-                  <view class="navigator-text">公告：凯特芒因受天气影响延迟3天收到请回答</view>
-                  <view class="navigator-arrow"></view>
-                </navigator> 
-  
+    <view class="navigator-text">公告：凯特芒因受天气影响延迟3天收到请回答</view>
+    <view class="navigator-arrow"></view>
+  </navigator>
+
 </view>
-  
-    <div class="weui-cells page__category-content">
-                        <a class="weui-cell weui-cell_access js_item" data-id="button" href="javascript:;">
-                            <div class="weui-cell__bd">
-                                <p>Button</p>
-                            </div>
-                            <div class="weui-cell__ft_in-access"></div>
-                        </a>
-                        <a class="weui-cell weui-cell_access js_item" data-id="input" href="javascript:;">
-                            <div class="weui-cell__bd">
-                                <p>Input</p>
-                            </div>
-                            <div class="weui-cell__ft"></div>
-                        </a>
-                        <a class="weui-cell weui-cell_access js_item" data-id="list" href="javascript:;">
-                            <div class="weui-cell__bd">
-                                <p>List</p>
-                            </div>
-                            <div class="weui-cell__ft"></div>
-                        </a>
-                        <a class="weui-cell weui-cell_access js_item" data-id="slider" href="javascript:;">
-                            <div class="weui-cell__bd">
-                                <p>Slider</p>
-                            </div>
-                            <div class="weui-cell__ft"></div>
-                        </a>
-                        <a class="weui-cell weui-cell_access js_item" data-id="uploader" href="javascript:;">
-                            <div class="weui-cell__bd">
-                                <p>Uploader</p>
-                            </div>
-                            <div class="weui-cell__ft"></div>
-                        </a>
-                    </div>
+
+<view class="container">
+  <template is="top-menu" />
+</view>

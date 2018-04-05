@@ -1,13 +1,16 @@
 /**app.wxss**/
  @import "common/lib/weui.wxss"; 
+
 page{
   background-color:#f8f8f8; 
 }
+
 .container {
   display: flex;
+  background: #fff;
   flex-direction: column;  
   padding: 0;
-  margin: 0;
+  margin: 0 0 30rpx;
   box-sizing: border-box;
   border-top:1rpx solid #e6e6e6;
   border-bottom:1rpx solid #e6e6e6;
@@ -15,11 +18,9 @@ page{
 
 page .container:first-child {
   border-top: 0;
-}
-.fdr {
-  flex-direction: row;
-}
+} 
 
-.flex-1 {
-  flex: 1;
+
+.link:active {
+    background-color: #ececec
 }

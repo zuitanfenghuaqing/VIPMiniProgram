@@ -1,5 +1,5 @@
 /**index.wxss**/
-
+@import "../component/top-menu/top-menu.wxss";
 .top {
   background: #fff;
   padding-top: 20rpx;
@@ -21,7 +21,7 @@
   justify-content: center;
   text-align: center;
   font-size: 24rpx;
-  color: #5d5d5d;
+  color: #666;
 }
 
 .top .notice{
@@ -34,6 +34,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  color: #333;
 }
 .navigator:before {
   content: " ";
@@ -42,7 +43,7 @@
   top: 0;
   right: 30rpx;
   height: 1px; 
-  color: #D8D8D8;
+  color: #e6e6e6;
 }
 .navigator:first-child:before {
   display: none;
