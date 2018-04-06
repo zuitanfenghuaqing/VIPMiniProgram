@@ -1,6 +1,5 @@
 <!--index.wxml-->
-<import src="/common/template/top-menu/top-menu.wxml" />
-
+<!--top  -->
 <view class="container top">
   <view class="head">
     <view class="head-item ">
@@ -17,17 +16,108 @@
     </view>
     <view class="head-item icon-redpacket">
       <image class="icon-manage" src="../../images/home_ico_4.png" background-size="cover"></image>
+      <view class="redpoint">3</view>
       <view>红包</view>
     </view>
   </view>
 
-  <navigator url="pages/{{page}}/{{page}}" class="navigator notice">
-    <view class="navigator-text">公告：凯特芒因受天气影响延迟3天收到请回答</view>
-    <view class="navigator-arrow"></view>
+  <navigator url="pages/{{page}}/{{page}}" class="cell notice">
+    <view class="cell-text">
+      <image class="icon-notice" src="../../images/home_ico_mess.png"></image>
+      公告：凯特芒因受天气影响延迟3天收到请回答凯特芒因受天气影响延迟3天收到请回答
+      <view class="notice-redpoint"></view>
+    </view>
+    <view class="cell-arrow"></view>
   </navigator>
 
 </view>
-
+<!-- 分类 -->
 <view class="container">
-  <template is="top-menu" data="{{...item}}"/>
+
+  <!--todo   动画效果   -->
+  <view class='menu'>
+    <view class='top-menu'>
+      <block wx:for="{{menuData}}" wx:key="title">
+        <view class="menu-item link {{selectMenu.current==index&&selectMenu.isShow?'active':''}}" data-index="{{index}}" bindtap="menuTap">{{item.title}}
+          <view class="triangle"></view>
+        </view>
+        <view class="child-item  {{selectMenu.current==index&&selectMenu.isShow?'show':''}}">
+          <block wx:for="{{item.list}}" wx:key="id" wx:for-index="idx">
+            <view class=" {{selectMenu.selectedChild==idx&&selectMenu.selectedCurrent==index?'active':''}}" data-index="{{idx}}" data-pid="{{index}}" bindtap="childMenuTap">{{item.name}}</view>
+          </block>
+        </view>
+      </block>
+
+    </view>
+  </view>
+
+  <!--商品列表  -->
+  <view class="">
+
+    <navigator url="pages/{{page}}/{{page}}" class="cell">
+      <image class="product-img" src="../../images/home_ico_mess.png"></image>
+      <view class="product-info">
+        <view class="product-title"> 尤尼克斯最新atjeklawfjdiasl球拍战神附近的快乐撒娇尝试打开啦附近看到了撒酒疯的快乐撒娇
+        </view>
+        <view class="product-status">
+          <view class='price'>
+            <view class='rmb'>￥</view>
+            <view class=''>2388</view>
+          </view>
+          <view class='discount'>6.88折</view>
+          <view class="sales">累计销量：2365单</view>
+        </view>
+      </view>
+    </navigator>
+
+    <navigator url="pages/{{page}}/{{page}}" class="cell">
+      <image class="product-img" src="../../images/home_ico_mess.png"></image>
+      <view class="product-info">
+        <view class="product-title"> 尤尼克斯最新atjeklawfjdiasl球拍战神附近的快乐撒娇尝试打开啦附近看到了撒酒疯的快乐撒娇
+        </view>
+        <view class="product-status">
+          <view class='price'>
+            <view class='rmb'>￥</view>
+            <view class=''>2388</view>
+          </view>
+          <view class='discount'>6.88折</view>
+          <view class="sales">累计销量：2365单</view>
+        </view>
+      </view>
+    </navigator>
+
+    <navigator url="pages/{{page}}/{{page}}" class="cell">
+      <image class="product-img" src="../../images/home_ico_mess.png"></image>
+      <view class="product-info">
+        <view class="product-title"> 尤尼克斯最新atjeklawfjdiasl球拍战神附近的快乐撒娇尝试打开啦附近看到了撒酒疯的快乐撒娇
+        </view>
+        <view class="product-status">
+          <view class='price'>
+            <view class='rmb'>￥</view>
+            <view class=''>2388</view>
+          </view>
+          <view class='discount'>6.88折</view>
+          <view class="sales">累计销量：2365单</view>
+        </view>
+      </view>
+    </navigator>
+
+
+    <navigator url="pages/{{page}}/{{page}}" class="cell">
+      <image class="product-img" src="../../images/home_ico_mess.png"></image>
+      <view class="product-info">
+        <view class="product-title"> 尤尼克斯最新atjeklawfjdiasl球拍战神附近的快乐撒娇尝试打开啦附近看到了撒酒疯的快乐撒娇
+        </view>
+        <view class="product-status">
+          <view class='price'>
+            <view class='rmb'>￥</view>
+            <view class=''>2388</view>
+          </view>
+          <view class='discount'>6.88折</view>
+          <view class="sales">累计销量：2365单</view>
+        </view>
+      </view>
+    </navigator>
+
+  </view>
 </view>

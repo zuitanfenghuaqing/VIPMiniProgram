@@ -4,51 +4,40 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
+    menuData: [{
+      title: "类别",
+      list: [{ id: "111", name: "羽毛球1" }, { id: "222", name: "羽毛球2" }, { id: "333", name: "羽毛球3" }, { id: "444", name: "羽毛球4" }]
+    }, {
+      title: "品牌",
+      list: [{ id: "111", name: "羽毛球11" }, { id: "222", name: "羽毛球22" }, { id: "333", name: "羽毛球33" }, { id: "444", name: "羽毛球44" }]
+    }],
+    selectMenu: {
+      current: -1,
+      selectedCurrent: -1,
+      selectedChild: -1,
+      isShow: false,
     }
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+
+  menuTap: function (e) {
+    var selectMenu = this.data.selectMenu;
+    selectMenu.isShow = !selectMenu.isShow;
+    if (selectMenu.current != e.currentTarget.dataset.index)
+      selectMenu.isShow = true;
+    selectMenu.current = e.currentTarget.dataset.index;
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      selectMenu: selectMenu
     })
-  }
+  },
+
+  childMenuTap: function (e) {
+    var selectMenu = this.data.selectMenu;
+    selectMenu.selectedChild = e.currentTarget.dataset.index;
+    selectMenu.isShow = false;
+    selectMenu.selectedCurrent = e.currentTarget.dataset.pid;
+    this.setData({
+      selectMenu: selectMenu
+    })
+  },
+
 })
