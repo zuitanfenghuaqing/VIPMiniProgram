@@ -206,3 +206,42 @@
   color: #999;
   flex: 1;
 }
+
+/* foot  */
+
+.foot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  height: 100rpx;
+  border-top: 1rpx soild #e6e6e6;
+  display: flex;
+}
+
+.foot-menu {
+  display: flex;
+  flex: 1;
+  font-size: 24rpx;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.foot .icon {
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.btn-guide {
+  position: fixed;
+  right: 3rpx;
+  bottom: 150rpx;
+}
+
+.icon-guide {
+  width: 90rpx;
+  height: 90rpx;
+}

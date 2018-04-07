@@ -121,3 +121,22 @@
 
   </view>
 </view>
+<!--foot  -->
+<view class="foot">
+  <view class="foot-menu">
+    <image class="icon" src="../../images/home_ico_1.png"></image>
+    <view>首页</view>
+  </view>
+  <view class="foot-menu">
+    <image class="icon" src="../../images/home_ico_1.png"></image>
+    <view>订单</view>
+  </view>
+  <view class="foot-menu">
+    <image class="icon" src="../../images/home_ico_1.png"></image>
+    <view>我的</view>
+  </view>
+</view>
+
+<navigator url="pages/{{page}}/{{page}}" class="btn-guide">
+  <image class="icon-guide" src="../../images/home_btn_gui.png"></image>
+</navigator>
