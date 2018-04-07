@@ -1,0 +1,13 @@
+<!-- releaseMsg.html -->
+<view class="section">
+  <form bindsubmit="bindFormSubmit">
+    <textarea placeholder="请输入通知内容" name="textarea" class='msg_text'/>
+    <view class="radio-group">
+        <view class='radio'>
+            <image class="icon-guide" src='../../../images/deta_btn_sele.png'></image>
+            <text>置顶</text>
+        </view>
+    </view>
+    <button form-type="submit" class='submitBtn'>发布</button>
+  </form>
+</view> 

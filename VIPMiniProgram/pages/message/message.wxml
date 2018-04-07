@@ -1,0 +1,44 @@
+<!-- message.html  -->
+<view class='timeTitle'>
+        <text class='time'>刚刚</text>
+</view>
+<view class='Underworld'>
+        <text class='under_title'>帮会须知：进入帮会的所有成员先看每个页面的指南。</text>
+        <text class='under_from'>来自【平台】</text>
+</view>
+
+<view class='timeTitle'>
+        <text class='time'>2小时以前</text>
+</view>
+<view class='Underworld'>
+        <text class='under_title_msg'>通知：尤尼克斯球拍由于供不应求，现零时调整发货时间。具体通知如下:</text>
+        <text class='under_msg'>20: 00 ~ 23: 56只接单不发货...</text>
+        <view class='under_foot'>
+                <text>来自【帮主】</text>
+                <text>查看全部 ></text>
+        </view>
+</view>
+
+<view class='timeTitle'>
+        <text class='time'>1天前</text>
+</view>
+<view class='Underworld'>
+        <text class='under_title'>“尤尼克斯89809羽毛球拍”有新的素材更新啦！</text>
+        <text class='under_from'>来自【平台】</text>
+</view>
+
+<view class='timeTitle'>
+        <text class='time'>2017-12-03</text>
+</view>
+<view class='Underworld'>
+        <text class='under_title_msg'>通知：尤尼克斯球拍由于供不应求，现零时调整发货时间。具体通知如下:</text>
+        <text class='under_msg'>20: 00 ~ 23: 56只接单不发货...</text>
+        <view class='under_foot'>
+                <text>来自【帮主】</text>
+                <text>查看全部 ></text>
+        </view>
+</view>
+
+<navigator url="pages/{{page}}/{{page}}" class="btn-guide">
+  <image class="icon-guide" src="../../images/mes_btn_pub.png"></image>
+</navigator>
