@@ -11,8 +11,8 @@ class Index
         // $data = ['name'=>'thinkphp','url'=>'thinkphp.cn'];
         // 指定json数据输出
         // return json(['data'=>$data,'code'=>1,'message'=>'操作完成']);
-        $data = ['foo' => 'bar', 'bar' => 'foo'];
-        Db::name('demo')->insert($data);
+        // $data = ['foo' => 'bar', 'bar' => 'foo'];
+        // Db::name('demo')->insert($data);
         $data = Db::name('demo')->find();
         print_r($data);
 
