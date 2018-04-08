@@ -1,0 +1,18 @@
+<!-- productDetails.html -->
+<view class='topTitle'>
+    <text>特产代言指南></text>
+    <image src='../../images/deta_btn_dele.pngs'></image>
+</view>
+<view class='swiperTop'>
+    <swiper indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}" 
+            interval="{{interval}}" 
+            duration="{{duration}}"
+            class='swiperImg'>
+    <block wx:for="{{imgUrls}}" wx:key>
+        <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+        </swiper-item>
+    </block>
+    </swiper>
+</view>

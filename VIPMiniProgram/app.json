@@ -1,6 +1,6 @@
 {
   "pages":[
-    // "pages/message/msgList/message",
+    "pages/productDetails/productDetails",
     "pages/index/index",
     "pages/logs/logs"
   ],
