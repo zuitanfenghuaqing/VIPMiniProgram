@@ -4,7 +4,7 @@
 
 晚上时间有限 没做多少事情<br>
 服务器IP111.231.190.91 装了mongo 配置运行OK 装了php nginx 配置运行也OK 不过还没tp 和php-mongo扩展<br>
-还需要升级php版本 下最新的tp<br>
+还需要升级php版本 下最新的tp 空了装个supervisor 配个开机启动<br>
 >2018-4-7
 
 先把昨天首页完成了<br>
