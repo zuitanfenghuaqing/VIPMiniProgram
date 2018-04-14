@@ -8,7 +8,7 @@ class Index
 {
     public function index()
     {
-        return json(['code'=>0,'message'=>'index']);
+        // return json(['code'=>0,'message'=>'index']);
         //test
         // $data = ['name'=>'thinkphp','url'=>'thinkphp.cn'];
         // 指定json数据输出
