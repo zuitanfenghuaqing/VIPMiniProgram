@@ -17,9 +17,9 @@ return [
     // 数据库名
     'database'        => 'vip',
     // 用户名
-    'username'        => '',
+    'username'        => 'vipadmin',
     // 密码
-    'password'        => '',
+    'password'        => 'viplvren555',
     // 端口
     'hostport'        => '27017',
     // 连接dsn
