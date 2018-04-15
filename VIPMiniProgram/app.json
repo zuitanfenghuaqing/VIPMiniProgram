@@ -1,5 +1,9 @@
 {
   "pages":[
+<<<<<<< HEAD
+=======
+    "pages/productDetails/productDetails",
+>>>>>>> bbe0efda31a4d9afd42146975f1890ca1e5ba84b
     "pages/index/index",
     "pages/productDetails/productDetails",
     "pages/logs/logs"
