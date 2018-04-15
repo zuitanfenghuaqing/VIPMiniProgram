@@ -19,6 +19,38 @@ Page({
     }
   },
 
+  onShow: function (option) {
+    var that = this;
+
+    //用户信息
+    app.getUserInfo(function (userInfo) {
+      if (userInfo != null) {
+        that.setData({
+          userInfo: {
+            headUrl: userInfo.avatarUrl,
+            name: userInfo.nickName
+          }
+        })
+      } else {
+        that.setData({
+          isGetedUserInfo: false,
+          pageLoading: false,
+          showError: '未获取到用户信息'
+        })
+      } 
+      //产品列表
+      httpServer.httpGet({ url: "index/getProductList", type: "5ad3204c36d9142128006157" }, function (data) {
+        console.log('产品列表', data)
+        if (data != null && data.ok == 1) {
+          that.setData({
+            classify: data.list
+          })
+        }
+      }) 
+
+    })
+  },
+
   menuTap: function (e) {
     var selectMenu = this.data.selectMenu;
     selectMenu.isShow = !selectMenu.isShow;

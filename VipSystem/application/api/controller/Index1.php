@@ -4,7 +4,7 @@ namespace app\api\controller;
 
 use think\Db;
 
-class Index extends BaseController
+class Index1 extends BaseController
 {
     public function index()
     {
