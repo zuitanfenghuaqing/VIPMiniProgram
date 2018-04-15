@@ -17,7 +17,7 @@ function success($data)
     return json(['data' => $data, 'code' => 0, 'message' => 'success']);
 }
 
-function error()
+function error($message = 'error', $code = 10000)
 {
-    return json(['code' => 10000, 'message' => 'error']);
+    return json(['code' => $code, 'message' => $message]);
 }

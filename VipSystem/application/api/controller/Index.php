@@ -80,7 +80,20 @@ class Index
         // for ($i=0; $i < 10; $i++) {
         //     Db::name('product')->insert($data);
         // }
+        if (24 != strlen($type) && $type) {
+            return error('参数错误：错误的类别id');
+        }
+
+        if (24 != strlen($brand) && $brand) {
+            return error('参数错误：错误的品牌id');
+        }
         $query = [];
+        if ($type) {
+            $query['type'] = $type;
+        }
+        if ($brand) {
+            $query['brand'] = $brand;
+        }
         $data = Db::name('product')->where($query)->limit($limit)->skip($skip)->select();
 
         return success($data);
