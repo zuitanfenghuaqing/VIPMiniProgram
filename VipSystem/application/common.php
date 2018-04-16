@@ -23,7 +23,7 @@ function error($message = 'error', $code = 10000)
 }
 
  /*post数据到指定url,并返回结果*/
- public static function httpPost ($url, $postVars,$headers=NULL)
+ function httpPost ($url, $postVars,$headers=NULL)
  {
      $ch = curl_init($url);
      curl_setopt($ch, CURLOPT_HEADER, false);
@@ -53,7 +53,7 @@ function error($message = 'error', $code = 10000)
  }
  
  /*从指定url get数据*/
- public static function HttpGet ($url,$userpwd=NULL,$headers=NULL)
+ function HttpGet ($url,$userpwd=NULL,$headers=NULL)
  {
      $ch = curl_init($url);
      curl_setopt($ch, CURLOPT_HEADER, false);

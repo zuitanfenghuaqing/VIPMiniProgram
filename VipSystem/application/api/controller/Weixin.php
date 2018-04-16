@@ -3,14 +3,16 @@
 namespace app\api\controller;
 
 use think\Db;
+use \wx\WeixinService;
 
 class Weixin extends BaseController
 {
     //微信登录获取
     public function login()
     {  
-        var $a =httpPost("http://www.baidu.com");
-        dump($a);
+        $wxs = new \wx\WeixinService();
+        $a =httpGet("http://www.baidu.com");
+        print_r($a);
         return Json(config('wx_appid'));
         // $surl=sprintf("https://api.weixin.qq.com/sns/jscode2session?appid=%s&secret=%s&js_code=%s&grant_type=authorization_code",self::$appId,self::$secretKey,$para["code"]);
 		// $result=Utility::HttpGet($surl);
