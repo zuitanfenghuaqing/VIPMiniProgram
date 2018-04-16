@@ -1,18 +1,84 @@
 <!-- productDetails.html -->
-<view class='topTitle'>
-    <text>特产代言指南></text>
-    <image src='../../images/deta_btn_dele.pngs'></image>
-</view>
-<view class='swiperTop'>
+    <view class='topTitle'>
+        <text>特产代言指南 ></text>
+        <image src='../../images/deta_btn_dele.png'></image>
+    </view>
+    <view class='swiperTop'>
     <swiper indicator-dots="{{indicatorDots}}"
             autoplay="{{autoplay}}" 
             interval="{{interval}}" 
             duration="{{duration}}"
             class='swiperImg'>
-    <block wx:for="{{imgUrls}}" wx:key>
-        <swiper-item>
-        <image src="{{item}}" class="slide-image"/>
-        </swiper-item>
-    </block>
+        <block wx:for="{{imgUrls}}" wx:key>
+            <swiper-item>
+            <image src="{{item}}" class="slide-image"/>
+            </swiper-item>
+        </block>
     </swiper>
-</view>
+    </view>
+
+    <view class="commodityName">
+        <text>YONEX/尤尼克斯210186BCR林丹战袍丹战袍</text>
+    </view>
+
+    <view class='price'>
+        <view class="price_scope">
+            <text><text>¥</text>240-260</text>
+            <view>6.8折</view>
+        </view>
+        <view class="sales_statistics">
+            <text>累计销量</text>
+            <text>2365单</text>
+        </view>
+    </view>
+
+    <view class="quality">
+        <view class="quality_list">
+            <view>
+                <image src="../../images/deta_ico_safe.png"></image>
+                <text>正品认证</text>
+            </view>
+            <view>
+                <image src="../../images/deta_ico_safe.png"></image>
+                <text>正品认证</text>
+            </view>
+        </view>
+        <image src="../../images/deta_ico_ang.png"></image>
+    </view>
+    <!-- 评价 -->
+    <view class="appraiseList">
+        <view class="appraise">
+            <view class="addAppraise">
+                <image src="../../images/deta_ico_1.png" class="msg"></image>
+                <text>累计评价<text>（312）</text></text>
+            </view>
+            <image src="../../images/deta_ico_ang.png"></image>
+        </view>
+        <view class="appraise">
+            <view class="addAppraise">
+                <image src="../../images/00.jpeg" class="userImg"></image>
+                <view class="userMsg">
+                    <text>维***蜜</text>
+                    <text>2017-02-22</text>
+                </view>
+            </view>
+            <view class="birdList">
+                <image src="../../images/shop_ico_badm.png"></image>
+                <image src="../../images/shop_ico_badm.png"></image>
+                <image src="../../images/shop_ico_badm.png"></image>
+            </view>
+        </view>
+        <view class='userMassge'>
+            <text>衣服质量太好啦，颜色也超级喜欢，店家很好送了小礼品，总之非常满意</text>
+            <text>红色：XXL</text>
+        </view>
+    </view>
+
+     <view class="appraise fridens">
+        <view class="addAppraise">
+            <image src="../../images/deta_ico_2.png" class="firdenIcon"></image>
+            <text>朋友圈素材</text>
+        </view>
+        <image src="../../images/deta_ico_ang.png"></image>
+    </view>
+   

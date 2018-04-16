@@ -18,7 +18,7 @@
 .swiperTop .wx-swiper-dots.wx-swiper-dots-horizontal{
     margin-left: 240rpx;
 }
-.topTitle{
+.topTitle{ 
     width: 100%;
     height: 72rpx;
     background-color: rgba(255, 207, 79, 0.15);
@@ -27,16 +27,146 @@
     font-family: PingFang-SC-Medium;
     font-size: 25rpx;
     justify-content: space-around;
-}
+}   
 .topTitle text{
     flex: 1;
     text-align: center;
     color: #c8b073;
 }
 .topTitle image{
-    width: 22rpx;height: 22rpx;
-    margin-right: 12rpx;
+    width: 26rpx;height: 26rpx;
+    margin-right: 22rpx;
 }
-
-
-
+/* commodity */
+.commodityName{
+    background-color: #fff;
+    padding: 0 60rpx;
+}
+.commodityName text{
+    font-size: 36rpx;
+    color: black;
+}
+.price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+}
+.price_scope,.sales_statistics{
+    display: flex;
+    align-items: center;
+    padding: 20rpx 60rpx;
+}
+.price_scope>text{
+    color: red;
+    margin-right: 15rpx;
+    font-size: 24rpx;
+}
+.price_scope>text:nth-child(2){
+    font-size: 12rpx;
+}
+.price_scope view{
+    color: white;
+    padding:2rpx 14rpx;
+    background-color: #10d279;
+    border-radius: 10rpx;
+    font-size: 22rpx;
+}
+.sales_statistics{
+    color: #999;
+    font-size: 24rpx;
+}
+.sales_statistics text{
+    margin-right: 15rpx;
+}
+.quality,.quality_list,.appraise{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+.quality{
+    justify-content: space-between;   
+    padding: 20rpx 50rpx;
+    border-bottom: 1px solid #e6e6e6;
+}
+.quality_list>view{
+    display: flex;
+    align-items: center;
+    font-size: 26rpx;
+    color: #666;
+    margin-right: 20rpx;
+}
+.quality_list>view>image{
+    width: 32rpx;height: 34rpx;
+    margin-right: 10rpx;
+}
+.quality>image,.appraise>image{
+    width: 10rpx;height: 16rpx;
+    margin-right: 35rpx;
+}
+/* 评价 */
+.appraiseList{
+    border-top: 1px solid #e6e6e6;
+    margin-top: 50rpx;
+    background-color: #fff;
+    padding-top: 20rpx;
+}
+.appraise{
+    justify-content: space-between;
+    padding: 20rpx 50rpx;
+}
+.addAppraise{
+    display: flex;
+    align-items: center;
+    font-size: 30rpx;
+    color: #333;
+}
+.msg{
+    margin-right: 20rpx;
+    width: 36rpx;height: 34rpx;
+}
+.birdList{
+    margin-right: 20rpx;
+}
+.birdList image{
+    width: 28rpx;height: 31rpx;
+}
+.userMsg{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20rpx;
+}
+.userMsg text:nth-child(1){
+    font-size: 28rpx;
+    color: #333;
+}
+.userMsg text:nth-child(2){
+    font-size: 24rpx;color: #999;
+}
+.userImg{
+    width: 70rpx;height: 70rpx;
+    border-radius: 50rpx;
+}
+.userMassge{
+    padding: 10rpx 40rpx;
+    display: flex;
+    flex-direction: column;
+}
+.userMassge text:nth-child(1){
+    color: #666;
+    font-size: 28rpx;
+}
+.userMassge text:nth-child(2){
+    font-size: 26rpx;
+    color: #999;
+    padding: 10rpx 0;
+}
+.fridens{
+    border-top: 1px solid #e6e6e6;
+    margin-top: 50rpx;
+}
+.firdenIcon{
+    width: 35rpx;height: 35rpx;
+    border-radius: 20rpx;
+    margin-right: 20rpx;
+}
