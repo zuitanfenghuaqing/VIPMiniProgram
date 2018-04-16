@@ -22,7 +22,6 @@ function wxRequest(data, cb) {
   
   data["token"] = wx.getStorageSync('token') || "";
 
-  
   //没有token 调接口 先调登录（除了登录以外）
   if (data["token"] == "" && data['url'] != "weixin/login") {
     if (that.globalData.userInfo) {
@@ -75,7 +74,7 @@ function wxRequest(data, cb) {
         }
       });
     }
-  } else {
+  } else { 
     wx.request({
       url: serverUrl + data['url'] ,
       data: getSign(data),
