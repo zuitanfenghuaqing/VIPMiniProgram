@@ -4,7 +4,7 @@ namespace app\api\controller;
 
 use think\Db;
 
-class Index
+class Index extends BaseController
 {
     public function index()
     {
@@ -73,8 +73,10 @@ class Index
     }
 
     // 产品列表
-    public function getProductList($type = '', $brand = '', $limit = 10, $skip = 0)
+    public function getProductList()
     {
+        $type = input('post.type', '');
+        $brand = input('post.brand', '');
         //test
         // $data = ['name' => 'YONEX/尤尼克斯BR-45652新色李宗伟战拍', 'price' => 2388,'discount'=>6.8,'sales'=>2365,'pic'=>'http://img10.360buyimg.com/n1/jfs/t9784/92/1621868077/151866/cb7fbd64/59e42128Nd18189de.jpg'];
         // for ($i=0; $i < 10; $i++) {
@@ -94,7 +96,7 @@ class Index
         if ($brand) {
             $query['brand'] = $brand;
         }
-        $data = Db::name('product')->where($query)->limit($limit)->skip($skip)->select();
+        $data = Db::name('product')->where($query)->select();
 
         return success($data);
     }
