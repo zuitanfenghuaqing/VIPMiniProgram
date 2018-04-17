@@ -75,6 +75,7 @@ function wxRequest(data, cb) {
       });
     }
   } else { 
+    //调用登录
     wx.request({
       url: serverUrl + data['url'] ,
       data: getSign(data),

@@ -17,8 +17,7 @@ return [
 
     // 微信配置
     'wx_appid' => 'xxx',
-    'wx_secretKey' => 'secretKey',
-
+    'wx_secretkey' => 'secretKey',
 
     // 应用调试模式
     'app_debug'              => true,
