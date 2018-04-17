@@ -10,7 +10,7 @@ class Index extends BaseController
     //首页
     public function index()
     {
-        return json(['code' => 0, 'message' => 'index']);
+        return success();
         //test
         // $data = ['name'=>'thinkphp','url'=>'thinkphp.cn'];
         // 指定json数据输出
@@ -40,8 +40,10 @@ class Index extends BaseController
     }
 
     // 公告
-    public function getNotice($limit = 3, $skip = 0)
+    public function getNotice()
     {
+        $limit = 3;
+        $skip = 0;
         // echo bDate(time()-86400*2);
         // $data = ['content' => '通知：尤尼克斯球拍由于供应不足，限制临时调整发货时间，具体调整如下：20：30~23：56只接单不发货尤尼克斯球拍由于供应不足，限制临时调整发货时间，具体调整如下：20：30~23：56只接单不发货', 'come_from' => '平台','time'=>time(),'is_top'=>1,'gang_id'=>'5ad177e836d91420300032e6','user_id'=>'5ad177e836d91420300032e7'];
         // Db::name('notice')->insert($data);
