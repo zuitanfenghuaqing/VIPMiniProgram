@@ -12,7 +12,7 @@
 
 // 应用公共文件
 
-function success($data)
+function success($data=[])
 {
     return json(['data' => $data, 'code' => 0, 'message' => 'success']);
 }
@@ -89,4 +89,37 @@ function getRemoteIp ()
         return $_SERVER ['REMOTE_ADDR'];
     }
     return NULL;
+}
+
+
+/**
+ * 将时间转化为几分几秒前
+ * @param   sTime 源时间 
+ * @return  string 几分几秒前
+ */
+  function bDate($sTime) {
+	$cTime  = time();
+	$dTime  = $cTime - $sTime;
+	$dDay  = intval(date("Ymd",$cTime)) - intval(date("Ymd",$sTime));
+	$dYear  = intval(date("Y",$cTime)) - intval(date("Y",$sTime));
+	if( $dTime<=10){
+		$dTime =  "刚刚";
+	}elseif( $dTime < 60 ){
+		$dTime =  $dTime."秒前";
+	}elseif( $dTime < 3600 ){
+		$dTime =  intval($dTime/60)."分钟前";
+	}elseif( $dTime >= 3600  && $dDay == 0 ){
+		$dTime =  intval($dTime/3600)."小时前";
+	}elseif( $dDay == 1 ){
+		$dTime =  '昨天'.date("H:i",$sTime);
+	}elseif( $dDay == 2 ){
+		$dTime =  '前天'.date("H:i",$sTime); 
+	}elseif( $dDay < 4 ){
+		$dTime =  $dDay.'天前'; 
+	}elseif($dDay>=4 && $dYear==0){
+		$dTime =  date("m-d H:i",$sTime);
+	}else{
+		$dTime =  date("Y-m-d H:i",$sTime);
+	}
+	return $dTime;
 }

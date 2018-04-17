@@ -4,8 +4,10 @@ namespace app\api\controller;
 
 use think\Db;
 
+//首页
 class Index extends BaseController
 {
+    //首页
     public function index()
     {
         return json(['code' => 0, 'message' => 'index']);
@@ -40,7 +42,14 @@ class Index extends BaseController
     // 公告
     public function getNotice($limit = 3, $skip = 0)
     {
-        $query['foo'] = ['like', 'a'];
+        // echo bDate(time()-86400*2);
+        // $data = ['content' => '通知：尤尼克斯球拍由于供应不足，限制临时调整发货时间，具体调整如下：20：30~23：56只接单不发货尤尼克斯球拍由于供应不足，限制临时调整发货时间，具体调整如下：20：30~23：56只接单不发货', 'come_from' => '平台','time'=>time(),'is_top'=>1,'gang_id'=>'5ad177e836d91420300032e6','user_id'=>'5ad177e836d91420300032e7'];
+        // Db::name('notice')->insert($data);
+        // $data = ['content' => '通知：尤尼克斯球拍由于供应不足，限制临时调整发货时间，具体调整如下：20：30~23：56只接单不发货尤尼克斯球拍由于供应不足，限制临时调整发货时间，具体调整如下：20：30~23：56只接单不发货', 'come_from' => '帮主','time'=>time(),'gang_id'=>'5ad177e836d91420300032e6'];
+        // Db::name('notice')->insert($data);
+        // $data = ['content' => '通知：尤尼克斯球拍由于供应不足，限制临时调整发货时间，具体调整如下：20：30~23：56只接单不发货尤尼克斯球拍由于供应不足，限制临时调整发货时间，具体调整如下：20：30~23：56只接单不发货', 'come_from' => '平台','time'=>time(),'gang_id'=>'5ad177e836d91420300032e6'];
+        // Db::name('notice')->insert($data);
+        $query['come_from'] = ['like', 'a'];
         $query['shop'] = '';
         $data = Db::name('notice')->where($query)->limit($limit)->skip($skip)->select();
 
@@ -99,5 +108,21 @@ class Index extends BaseController
         $data = Db::name('product')->where($query)->select();
 
         return success($data);
+    }
+
+    public function publishNotice(){ 
+        $user_id = session('user_id');
+        if(!$user_id||strlen($user_id)!=24)
+            return error('请先登录'); 
+        $content = input('post.content', '');
+        if(!$content)
+            return error('缺少内容');
+        $is_top = input('post.is_top', ''); 
+        $gang_id = session('gang_id');
+        if(!$gang_id)
+            return error('请先登录');
+        $data = ['content' =>  $content, 'come_from' => '帮主','time'=>time(),'is_top'=>$is_top,'gang_id'=>$gang_id,'user_id'=>$user_id];
+        Db::name('notice')->insert($data);
+        return success();
     }
 }
