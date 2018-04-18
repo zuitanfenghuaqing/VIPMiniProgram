@@ -88,4 +88,52 @@ class Product extends BaseController
     public function forward()
     {
     }
+
+    // 筛选条件
+    public function getFilterData()
+    {
+        $brand_data = Db::name('brand')->field('id,name')->select();
+        $type_data = Db::name('type')->field('id,name')->select();
+        $data = [['name' => '全部产品', 'data' => ['官方产品', '自有产品']], ['name' => '全部类别', 'data' => $type_data], ['name' => '全部品牌', 'data' => $brand_data]];
+
+        return success($data);
+    }
+
+    // 产品列表
+    public function getProductList()
+    {
+        $classify = input('post.classify', '');
+        $type = input('post.type', '');
+        $brand = input('post.brand', '');
+        //test
+        // $data = ['name' => 'YONEX/尤尼克斯BR-45652新色李宗伟战拍', 'price' => 2388,'discount'=>6.8,'sales'=>2365,'pic'=>'http://img10.360buyimg.com/n1/jfs/t9784/92/1621868077/151866/cb7fbd64/59e42128Nd18189de.jpg'];
+        // for ($i=0; $i < 10; $i++) {
+        //     Db::name('product')->insert($data);
+        // }
+        if (24 != strlen($type) && $type) {
+            return error('参数错误：错误的类别id');
+        }
+
+        if (24 != strlen($brand) && $brand) {
+            return error('参数错误：错误的品牌id');
+        }
+        $query = [];
+        if ($type) {
+            $query['type'] = $type;
+        }
+        if ($brand) {
+            $query['brand'] = $brand;
+        }
+        $data = Db::name('product')->where($query)->select();
+
+        return success($data);
+    }
+
+    // 获取产品设置
+    public function getSettings()
+    {
+        $data = ['putaway' => ['自动上架', '手动上架'], 'selected_putaway' => '自动上架', 'show_settings' => ['展示全部产品', '紧展示CH版本产品'], 'select_show_settings' => '紧展示CH版本产品'];
+
+        return success($data);
+    }
 }
