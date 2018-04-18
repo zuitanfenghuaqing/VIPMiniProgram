@@ -112,19 +112,39 @@ class Index extends BaseController
         return success($data);
     }
 
-    public function publishNotice(){ 
+    //发布公告
+    public function publishNotice()
+    {
         $user_id = session('user_id');
-        if(!$user_id||strlen($user_id)!=24)
-            return error('请先登录'); 
-        $content = input('post.content', '');
-        if(!$content)
-            return error('缺少内容');
-        $is_top = input('post.is_top', ''); 
-        $gang_id = session('gang_id');
-        if(!$gang_id)
+        if (!$user_id || 24 != strlen($user_id)) {
             return error('请先登录');
-        $data = ['content' =>  $content, 'come_from' => '帮主','time'=>time(),'is_top'=>$is_top,'gang_id'=>$gang_id,'user_id'=>$user_id];
+        }
+        $content = input('post.content', '');
+        if (!$content) {
+            return error('缺少内容');
+        }
+        $is_top = input('post.is_top', '');
+        $gang_id = session('gang_id');
+        if (!$gang_id) {
+            return error('请先登录');
+        }
+        $data = ['content' => $content, 'come_from' => '帮主', 'time' => time(), 'is_top' => $is_top, 'gang_id' => $gang_id, 'user_id' => $user_id];
         Db::name('notice')->insert($data);
+
         return success();
+    }
+
+    //上传图片
+    public function upload()
+    {
+        $file = request()->file('file');
+        if ($file) {
+            $info = $file->validate(['size' => 15678, 'ext' => 'jpg,png'])->move(ROOT_PATH.'public'.DS.'uploads');
+            if ($info) {
+                return success(request()->domain().'/uploads/'.$info->getSaveName());
+            } else {
+                return error($file->getError());
+            }
+        }
     }
 }
