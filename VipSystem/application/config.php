@@ -15,9 +15,9 @@ return [
     // +----------------------------------------------------------------------
 
 
-    // 微信配置
-    'wx_appid' => 'xxx',
-    'wx_secretkey' => 'secretKey',
+    // 微信小程序配置
+    'wx_appid' => 'wx29591769561b7bab',
+    'wx_secretkey' => '1887c85874d4de545bee037b45ea7d1a', 
 
     // 应用调试模式
     'app_debug'              => true,

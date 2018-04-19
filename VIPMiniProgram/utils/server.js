@@ -1,6 +1,7 @@
 var key = "48b9386188e47d9cbfa6621ee295b623";
 var serverUrl = "http://111.231.190.91/api/";
 var md5 = require("md5.js");
+var util = require('../utils/util.js')
 function getSign(para) {
   para.timestamp = new Date().getTime();
   var sdic = Object.keys(para).sort();
@@ -30,6 +31,7 @@ function wxRequest(data, cb) {
       
       wx.login({
         success: function (result) {
+          util.showBusy('正在登录')
           console.log('微信登录');
           if (result.code) {
             //调用登录接口 
@@ -76,6 +78,7 @@ function wxRequest(data, cb) {
     }
   } else { 
     //调用登录
+    util.showBusy('正在登录')
     wx.request({
       url: serverUrl + data['url'] ,
       data: getSign(data),

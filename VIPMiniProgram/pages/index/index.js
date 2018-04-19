@@ -1,9 +1,11 @@
 //index.js
 //获取应用实例
 const app = getApp()
+var util = require('../../utils/util.js')
 
 Page({
   data: {
+    //测试数据
     menuData: [{
       title: "类别",
       list: [{ id: "111", name: "羽毛球1" }, { id: "222", name: "羽毛球2" }, { id: "333", name: "羽毛球3" }, { id: "444", name: "羽毛球4" }]
@@ -21,7 +23,7 @@ Page({
 
   onShow: function (option) {
     var that = this;
-
+    
     //用户信息
     app.getUserInfo(function (userInfo) {
       if (userInfo != null) {

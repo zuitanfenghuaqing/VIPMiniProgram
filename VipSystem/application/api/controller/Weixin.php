@@ -9,6 +9,11 @@ class Weixin extends BaseController
     //微信登录获取
     public function login()
     {
+        //test
+        $wxs = new \wx\WeixinService();
+        var_dump($wxs->SendRechargeNotice('',''));
+        return 'ok';
+
         $code = input('post.code', '');
         $surl = sprintf('https://api.weixin.qq.com/sns/jscode2session?appid=%s&secret=%s&js_code=%s&grant_type=authorization_code', config('wx_appid'), config('wx_secretkey'), $code);
         $result = httpGet($surl);
