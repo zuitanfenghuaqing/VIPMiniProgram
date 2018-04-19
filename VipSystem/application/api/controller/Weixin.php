@@ -11,7 +11,8 @@ class Weixin extends BaseController
     {
         //test
         $wxs = new \wx\WeixinService();
-        var_dump($wxs->SendRechargeNotice('',''));
+        var_dump($wxs->SendRechargeNotice('', ''));
+
         return 'ok';
 
         $code = input('post.code', '');
